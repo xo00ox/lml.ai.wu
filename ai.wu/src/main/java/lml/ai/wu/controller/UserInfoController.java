@@ -42,23 +42,33 @@ public class UserInfoController {
 	@RequestMapping("user")
 	public String getUser(HttpServletRequest request, Model model) {
 		int pageSize=10;
+		UserInfoExample example = new UserInfoExample();
 		String parameter = request.getParameter("currentPage");
-	/*	parameter!=null&&!"".equals(parameter)?Integer.parseInt(parameter):1;*/
+		String search = request.getParameter("search");
+		if(search!=null&&!"".equals(search))
+		{
+			Criteria createCriteria = example.createCriteria();
+			createCriteria.andUserNameLike("%"+search+"%");
+		}
 		if (parameter != null && !"".equals(parameter)) {
 			setCurrentPage(Integer.parseInt(parameter));
 		}
+		
 		model.addAttribute("currentPage", currentPage);
-		UserInfoExample example = new UserInfoExample();
+		
 		example.setOrderByClause("AGE desc");
-	/*	Criteria createCriteria = example.createCriteria();
-		createCriteria.andUserNameLike("%1%");*/
+		
+		
 		PageHelper.startPage(currentPage, pageSize);
 		List<UserInfo> list = infoService.selectByExample(example);
 		PageInfo<UserInfo> pageinfo = new PageInfo<>(list);
-		System.err.println(pageinfo.getList());
+		System.err.println(pageinfo.getNavigatepageNums());
 	
 		model.addAttribute("pageinfo", pageinfo);
 		return "NewFile";
 	}
+	
+	
+
 
 }
