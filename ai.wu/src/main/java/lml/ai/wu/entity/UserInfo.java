@@ -2,11 +2,13 @@ package lml.ai.wu.entity;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class UserInfo {
     private String userId;
 
     private String userName;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")  
     private Date birthday;
 
     private String sex;

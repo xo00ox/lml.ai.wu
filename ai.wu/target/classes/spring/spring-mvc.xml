@@ -18,32 +18,25 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 	<!-- 启用注解 -->
 	<mvc:annotation-driven>
-		<!-- 消息转换器,解决responseBody返回中外乱码问题和设置json -->
-		<mvc:message-converters register-defaults="true">
+		<mvc:message-converters>
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+				<!-- <property name="supportedMediaTypes" value="text/plain;charset=UTF-8"></property> -->
+				<constructor-arg value="UTF-8" />
+			</bean>
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
+	
 
 	<!-- 避免静态资源被拦截 -->
-	<mvc:default-servlet-handler />
+
 	<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
 	<mvc:resources mapping="/styles/**" location="/WEB-INF/styles/" />
 	<mvc:resources mapping="/images/**" location="/WEB-INF/images/" />
 	<mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
-
-
-	<!-- 启动SpringMVC的注解功能 -->
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-			<list>
-				<bean
-					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
-			</list>
-		</property>
-	</bean>
+	<mvc:default-servlet-handler />
 
 
 	<!-- 对模型视图添加前后缀 -->

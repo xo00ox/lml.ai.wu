@@ -25,25 +25,25 @@ public class UserInfoServiceImpl implements UserInfoService {
 	@Override
 	public int deleteByExample(UserInfoExample example) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.deleteByExample(example);
 	}
 
 	@Override
 	public int deleteByPrimaryKey(String userId) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.deleteByPrimaryKey(userId);
 	}
 
 	@Override
 	public int insert(UserInfo record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.insert(record);
 	}
 
 	@Override
 	public int insertSelective(UserInfo record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.insertSelective(record);
 	}
 
 	@Override
@@ -61,25 +61,25 @@ public class UserInfoServiceImpl implements UserInfoService {
 	@Override
 	public int updateByExampleSelective(UserInfo record, UserInfoExample example) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.updateByExampleSelective(record, example);
 	}
 
 	@Override
 	public int updateByExample(UserInfo record, UserInfoExample example) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.updateByExample(record, example);
 	}
 
 	@Override
 	public int updateByPrimaryKeySelective(UserInfo record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
 	public int updateByPrimaryKey(UserInfo record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return infoMapper.updateByPrimaryKey(record);
 	}
 	
 	
