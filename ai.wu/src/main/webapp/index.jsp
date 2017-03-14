@@ -15,7 +15,6 @@
 			</a></li>
 			<li><a href="#">Gallery </a></li>
 			<li><a href="#">Services </a></li>
-			<li><a href="#">系统管理 </a></li>
 			<li><a href="#">Portfolio </a></li>
 			<li><a href="#">About </a></li>
 			<li><a href="#">Contact </a></li>
@@ -25,30 +24,5 @@
 		style="margin-right: 5%; margin-top: 5%; display: inline; float: right; height: 400px; width: 1000px">
 		<iframe height="400px" width="1000px" src="" name="test"></iframe>
 	</div>
-	<input type="button" id="list" value="测试数组提交">
 </body>
-<script type="text/javascript">
-	$(function() {
-		var list = [];
-		var list2 = [];
-		var result=false;
-		for (var i = 0; i < 5; i++) {
-			list[i] = "你好" + i;
-			list2[i] = "你也好" + i;
-		}
-		$("#list").click(function() {
-			$.ajax({
-				type : "post",
-				url : "<c:url value='/test'/>",
-				data : {
-					"list" : list,
-					"list2" : list2,"b":result
-				},
-				success : function(data) {
-					console.log(data)
-				}
-			})
-		})
-	})
-</script>
 </html>
