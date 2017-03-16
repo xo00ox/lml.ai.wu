@@ -3,6 +3,8 @@ package lml.ai.wu.service;
 import java.util.List;
 
 import javax.jws.WebService;
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 	}
 
 	@Override
+	@Transactional
 	public int deleteByExample(UserInfoExample example) {
 		// TODO Auto-generated method stub
 		return infoMapper.deleteByExample(example);
@@ -47,6 +50,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 	}
 
 	@Override
+	@Transactional
 	public List<UserInfo> selectByExample(UserInfoExample example) {
 		// TODO Auto-generated method stub	
 		return infoMapper.selectByExample(example);

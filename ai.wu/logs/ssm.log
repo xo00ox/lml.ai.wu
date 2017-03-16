@@ -1,0 +1,8 @@
+[INFO] [2017-03-16 21:55:52][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5dfcfece, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@23ceabc1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5d5eef3d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@56f4468b]
+ S[INFO] [2017-03-16 21:55:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+ S[INFO] [2017-03-16 21:55:53][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@3abbfa04: startup date [Thu Mar 16 21:55:53 CST 2017]; root of context hierarchy
+ S[INFO] [2017-03-16 21:55:53][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [properties/jdbc.properties]
+ S[INFO] [2017-03-16 21:55:53][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ S[INFO] [2017-03-16 21:55:53][org.springframework.jdbc.datasource.DriverManagerDataSource]Loaded JDBC driver: oracle.jdbc.OracleDriver
+ S[INFO] [2017-03-16 21:55:55][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@3abbfa04: startup date [Thu Mar 16 21:55:53 CST 2017]; root of context hierarchy
+ S
