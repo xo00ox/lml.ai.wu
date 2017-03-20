@@ -20,7 +20,7 @@
 		用户名：<input type="text" name="userName" value="${user.userName}"><br>
 		生日：
 		<%-- <input type="text" name="birthday" value="${user.birthday}"> --%>
-		<input type="text" name="birthday" value="${user.birthday}"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})">
+		<input type="text" name="birthday" value="<fmt:formatDate value="${user.birthday}"/>"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})">
 		<br> 性别：
 		<%-- 	<input type="text" name="sex" value="${user.sex}"> --%>
 		<select name="sex">

@@ -3,10 +3,9 @@ package lml.ai.wu.service;
 import java.util.List;
 
 import javax.jws.WebService;
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lml.ai.wu.dao.UserInfoMapper;
 import lml.ai.wu.entity.UserInfo;
@@ -14,6 +13,7 @@ import lml.ai.wu.entity.UserInfoExample;
 
 @Service
 @WebService
+
 public class UserInfoServiceImpl implements UserInfoService {
 	@Autowired
 	private UserInfoMapper infoMapper;
@@ -25,7 +25,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 	}
 
 	@Override
-	@Transactional
+
 	public int deleteByExample(UserInfoExample example) {
 		// TODO Auto-generated method stub
 		return infoMapper.deleteByExample(example);
@@ -50,9 +50,9 @@ public class UserInfoServiceImpl implements UserInfoService {
 	}
 
 	@Override
-	@Transactional
+
 	public List<UserInfo> selectByExample(UserInfoExample example) {
-		// TODO Auto-generated method stub	
+		// TODO Auto-generated method stub
 		return infoMapper.selectByExample(example);
 	}
 
@@ -85,6 +85,30 @@ public class UserInfoServiceImpl implements UserInfoService {
 		// TODO Auto-generated method stub
 		return infoMapper.updateByPrimaryKey(record);
 	}
-	
-	
+
+	@Override
+	@Transactional
+	public void test(List<String> list) {
+		for(int i=0;i<list.size();i++)
+		{
+			if(i<1)
+			{
+				infoMapper.deleteByPrimaryKey(list.get(i));
+			}
+			else
+			{
+				throw new RuntimeException();
+			}
+		}
+	/*
+			infoMapper.deleteByPrimaryKey("4D8A5B6275A949C4A9A4F279A8C2CC2C");
+			String s = null;  
+	        s.getBytes(); 
+			infoMapper.deleteByPrimaryKey("A157BC085FFD498AA60EE6B4E0A907E8");
+			System.err.println("AA");
+*/
+		
+
+	}
+
 }

@@ -33,4 +33,6 @@ public interface UserInfoService {
 	    int updateByPrimaryKeySelective(UserInfo record);
 
 	    int updateByPrimaryKey(UserInfo record);
+	    
+	    void test(List<String> list);
 }
